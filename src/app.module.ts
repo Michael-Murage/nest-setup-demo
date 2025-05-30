@@ -5,6 +5,7 @@ import { NotesModule } from './notes/notes.module';
 import { SequelizeModule } from '@nestjs/sequelize';
 import { Note } from './notes/notes.model';
 import { ConfigModule } from '@nestjs/config';
+import { OpenaiModule } from './openai/openai.module';
 
 @Module({
   imports: [
@@ -22,6 +23,7 @@ import { ConfigModule } from '@nestjs/config';
     }),
     SequelizeModule.forFeature([Note]),
     ConfigModule.forRoot(),
+    OpenaiModule,
   ],
   controllers: [AppController],
   providers: [AppService],
